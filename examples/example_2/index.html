@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Example 1</title>
+  <title>Example 2</title>
 </head>
 <body>
   <div id="app"></div>
@@ -11,7 +11,13 @@
   <script>
     var app = document.getElementById('app');
 
-    ReactDOM.render(React.createElement('a', null, 'Just Link'), app)
+    var Component = React.createClass({
+      render: function () {
+        return React.createElement('div', null, 'Just Component');
+      }
+    });
+
+    ReactDOM.render(React.createElement(Component), app)
   </script>
 </body>
 </html>

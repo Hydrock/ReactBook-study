@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example 3 - Nested components and attributes</title>
+</head>
+<body>
+  <div id="app"></div>
+  <script src="../../node_modules/react/dist/react.min.js"></script>
+  <script src="../../node_modules/react-dom/dist/react-dom.min.js"></script>
+  <script>
+    var app = document.getElementById('app');
+
+    var ChildrenComponent = React.createClass({
+      render: function () {
+        return React.createElement('div', {name: 'child'}, 'I am a child');
+      }
+    });
+
+    var ParentComponent = React.createClass({
+      render: function () {
+        return React.createElement('div', {name: 'parent'}, React.createElement(ChildrenComponent));
+      }
+    });
+
+    ReactDOM.render(React.createElement(ParentComponent), app)
+  </script>
+</body>
+</html>
